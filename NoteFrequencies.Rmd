@@ -32,9 +32,14 @@ But your ear and your brain can tell you -- If I sang and asked you what, you'd 
 
 Here's we'll let some simple machine learning do the work of your ears and your brain.
 
-I've gone through and counted how many times each note appears and recorded the results in a spreadsheet at:
+I've gone through and counted how many times each note appears and recorded the results in a spreadsheet at <https://github.com/ryanjerving/note-frequencies/blob/master/datasets/another-day-frequency.csv>:
 
 ```{r another-day}
+
+ad <- read.csv("https://github.com/ryanjerving/note-frequencies/blob/master/datasets/another-day-frequency.csv")
+
+ggplot(ad, aes(x = Note, y = Frequency)) + geom_bar()
+
 
 ```
 
