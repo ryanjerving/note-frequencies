@@ -1,0 +1,54 @@
+---
+title: "Note Frequencies in Viper Songs"
+author: "The Viper"
+date: "April 30, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(ggplot2)
+
+```
+
+## Intro
+
+Musical improvisation or can seem like a mysterious thing -- and quite a leap from playing pre-scripted notes on a page of written most -- and, yet, most of us do it all the time as we hum, whistle, or la-de-da sing to ourselves. How do we know in our heads what notes are going to sound right? And how can we translate to act of improvisation (and its close cousin, composition)?
+
+This project tries to take one step toward demystifying the process of making stuff up by showing that, at a really basic level, you're not really out there on the hightwire without a safety net once you step off the platform of written notes. In fact, if you know something about the key, the chords, and the style of the music you're playing, you'll learn that there's a number of pretty much failproof stopping places all along the way.
+
+Come along for the ride!
+
+## Notes and Notes and Notes and Notes
+
+Here's the first couple of lines from a new song that....
+
+ADD PNG OF MUSIC
+
+Viper composed in G (how do we know). Key signature.
+
+But your ear and your brain can tell you -- If I sang and asked you what, you'd get right (Levitin)
+
+Here's we'll let some simple machine learning do the work of your ears and your brain.
+
+I've gone through and counted how many times each note appears and recorded the results in a spreadsheet at:
+
+```{r another-day}
+
+```
+
+Analysis -- what does this tell you about your choices: which notes are landing notes, which notes are tightrope notes.
+
+## The Question of Style
+
+Winnebago Bay
+
+```{r winnebago-bay, echo=FALSE}
+
+
+```
+
+## Then There's This
+
+The Monsters are Coming
