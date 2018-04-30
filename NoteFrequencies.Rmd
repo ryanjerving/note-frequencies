@@ -36,9 +36,9 @@ I've gone through and counted how many times each note appears and recorded the 
 
 ```{r another-day}
 
-ad <- read.csv("https://github.com/ryanjerving/note-frequencies/blob/master/datasets/another-day-frequency.csv")
+ad <- read.csv("https://raw.githubusercontent.com/ryanjerving/note-frequencies/master/datasets/another-day-frequency.csv")
 
-ggplot(ad, aes(x = Note, y = Frequency)) + geom_bar()
+ggplot(ad, aes(x = Note, y = Frequency, fill = Frequency)) + geom_col()
 
 
 ```
