@@ -14,11 +14,13 @@ library(ggplot2)
 
 ## Intro
 
-Musical improvisation or can seem like a mysterious thing -- and quite a leap from playing pre-scripted notes on a page of written most -- and, yet, most of us do it all the time as we hum, whistle, or la-de-da sing to ourselves. How do we know in our heads what notes are going to sound right? And how can we translate to act of improvisation (and its close cousin, composition)?
+Musical improvisation and composition can seem like a mysterious thing -- and quite a leap from simply playing pre-scripted notes on a page of written music. Where does it come from?
 
-This project tries to take one step toward demystifying the process of making stuff up by showing that, at a really basic level, you're not really out there on the hightwire without a safety net once you step off the platform of written notes. In fact, if you know something about the key, the chords, and the style of the music you're playing, you'll learn that there's a number of pretty much failproof stopping places all along the way.
+And, yet, most of us do it pretty un-self-consicously all the time as we hum, whistle, or la-de-da sing to ourselves -- or, in my case, to my dog and cat when I'm feeding them in the morning -- and we're never at a loss for what note to play next. How is that we seem know without thinking about it much what things are going to sound right as we spontaneously compose like this? And how far is it from being able to whistle, hum, or sing to being able to translate that act of improvisatory composition to an instrument?
 
-Come along for the ride!
+This project tries to take one small step for a Viper -- but one giant leap for Viper-kind -- toward demystifying the process of how to make stuff up. I hope to show that at some really basic level, you're not actually working without a net out there on the highwire once you step off the platform of written notes. In fact, if you know even a little bit about the key, the chords, and the style of the music you're playing, you'll find a number of more-or-less slip-proof platfroms serving as landings all along the rope.
+
+So let's take that first step!
 
 ## Notes and Notes and Notes and Notes
 
