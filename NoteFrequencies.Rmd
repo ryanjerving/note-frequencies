@@ -115,5 +115,5 @@ knitr::kable(ad, format = "html", caption = "Note Frequencies in 'Another Day'")
 
 ```
 
-
+NOTE: The files, images, datasets, music examples, and markdown and R code for this project can be accessed at the [GitHub repository](https://github.com/ryanjerving/note-frequencies) for this project. 
 
