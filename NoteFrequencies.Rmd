@@ -14,17 +14,21 @@ library(ggplot2)
 
 ## Intro
 
-Musical improvisation and composition can seem like a mysterious thing -- and quite a leap from simply playing pre-scripted notes on a page of written music. Where does it come from?
+Musical improvisation and composition can seem like a mysterious thing -- and quite a leap from simply playing pre-scripted notes on a page of written music.
 
-And, yet, most of us do it pretty un-self-consicously all the time as we hum, whistle, or la-de-da sing to ourselves -- or, in my case, to my dog and cat when I'm feeding them in the morning -- and we're never at a loss for what note to play next. How is that we seem know without thinking about it much what things are going to sound right as we spontaneously compose like this? And how far is it from being able to whistle, hum, or sing to being able to translate that act of improvisatory composition to an instrument?
+And, yet, most of us do it pretty un-self-consicously all the time as we hum, whistle, or la-de-da sing to ourselves -- or, in my case, to my dog and cat when I'm feeding them in the morning -- and we're never at a loss for what note to play next. 
 
-This project tries to take one small step for a Viper -- but one giant leap for Viper-kind -- toward demystifying the process of how to make stuff up. I hope to show that at some really basic level, you're not actually working without a net out there on the highwire once you step off the platform of written notes. In fact, if you know even a little bit about the key, the chords, and the style of the music you're playing, you'll find a number of more-or-less slip-proof platfroms serving as landings all along the rope.
+How is that we seem know without thinking about it much what things are going to sound right as we spontaneously compose like this? Where does "inspirado" come from? And how far is it from being able to whistle, hum, or sing to being able to translate that act of improvisatory composition to an instrument?
 
-So let's take that first step!
+This project tries to take one small step for a Viper -- but one giant leap for Viper-kind -- toward demystifying the process of how to make stuff up. I hope to show that, at some really basic level, you're not actually working without a net out there on the highwire once you step off the platform of written notes. In fact, if you know even a little bit about the key, the chords, and the style of the music you're playing, you'll find a number of more-or-less slip-proof platforms to serve you as landings all along the rope.
+
+How about we take that first doozy of a step!
 
 ## Notes and Notes and Notes and Notes
 
-Here's the first couple of lines from a new song that....
+So here's the first couple of lines of the melody of "Another Day," a new song that the Viper will premiere with the Chamber Orchestra of the Lake Zurich Middle School North orchestra program led by Mr. Riley Broach. (This is part of the programs annual Spring Concert happening on Thursday, May 17 at 7:00 p.m. -- the Viper will be doing a piece with Intermezzo Orchestra as well.) Looking at it (in treble, alto, and bass clefs!), it goes like this:
+
+
 
 ADD PNG OF MUSIC
 
@@ -36,9 +40,14 @@ Here's we'll let some simple machine learning do the work of your ears and your 
 
 I've gone through and counted how many times each note appears and recorded the results in a spreadsheet at <https://github.com/ryanjerving/note-frequencies/blob/master/datasets/another-day-frequency.csv>:
 
-```{r another-day}
+```{r another-day-note-frequency}
+
+# Read in "Another Day" note count data from csv stored in in GitHub documents for project.
+# NOTE: note counts were done with Python character count script -- include this here for reference?
 
 ad <- read.csv("https://raw.githubusercontent.com/ryanjerving/note-frequencies/master/datasets/another-day-frequency.csv")
+
+# Plot column bar chart of each scale note of scale by frequency appearing, with bar color reflecting this as well.
 
 ggplot(ad, aes(x = Note, y = Frequency, fill = Frequency)) + geom_col()
 
