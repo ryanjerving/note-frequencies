@@ -1,8 +1,11 @@
 ---
 title: "Note Frequencies in Viper Songs"
 author: "The Viper"
-date: "April 30, 2018"
-output: html_document
+date: "May 1, 2018"
+output: 
+  html_document:
+    theme: sandstone
+    highlight: haddock
 ---
 
 ```{r setup, include=FALSE}
@@ -14,57 +17,62 @@ library(ggplot2)
 
 ## Intro
 
-Musical improvisation and composition can seem like a mysterious thing -- and quite a leap from simply playing pre-scripted notes on a page of written music.
+**Musical improvisation and composition** can seem like a mysterious thing -- and quite a leap from simply playing pre-scripted notes on a page of written music.
 
-And, yet, most of us do it pretty un-self-consicously all the time as we hum, whistle, or la-de-da sing to ourselves -- or, in my case, to my dog and cat when I'm feeding them in the morning -- and we're never at a loss for what note to play next. 
+And, yet, most of us do it pretty un-self-consciously all the time as we hum, whistle, or la-de-da sing to ourselves -- or, in my case, to my dog and cat when I'm feeding them in the morning -- and we're never at a loss for what note to play next. 
 
-How is that we seem know without thinking about it much what things are going to sound right as we spontaneously compose like this? Where does "inspirado" come from? And how far is it from being able to whistle, hum, or sing to being able to translate that act of improvisatory composition to an instrument?
+How is that we seem know without thinking about it much what things are going to sound right as we spontaneously compose like this? Where does "inspirado" come from? And how far is it from being able to whistle, hum, or sing to being able to translate that act of *improvisatory composition* to an instrument?
 
-This project tries to take one small step for a Viper -- but one giant leap for Viper-kind -- toward demystifying the process of how to make stuff up. I hope to show that, at some really basic level, you're not actually working without a net out there on the highwire once you step off the platform of written notes. In fact, if you know even a little bit about the key, the chords, and the style of the music you're playing, you'll find a number of more-or-less slip-proof platforms to serve you as landings all along the rope.
+This project tries to take one small step for a Viper -- but one giant leap for Viper-kind -- toward demystifying the process of **how to make stuff up**. I hope to show you that, at some really basic level, you're not actually working without a net out there on the highwire once you step off the platform of written notes. In fact, if you know even a little bit about the `key`, the `chords`, and the `style` of the music you're playing, you'll find a number of more-or-less slip-proof platforms to serve you as landings all along the rope.
 
 How about we take that first doozy of a step!
 
 ## Notes and Notes and Notes and Notes
 
-So here's the first couple of lines of the melody of "Another Day," a new song that the Viper will premiere with the Chamber Orchestra of the Lake Zurich Middle School North orchestra program led by Mr. Riley Broach. (This is part of the programs annual Spring Concert happening on Thursday, May 17 at 7:00 p.m. -- the Viper will be doing a piece with Intermezzo Orchestra as well.) Looking at it (in treble, alto, and bass clefs!), it goes like this:
+So here's the first couple of lines of the melody of **"Another Day,"** a new song that the Viper will premiere with the **Chamber Orchestra** of the **Lake Zurich Middle School North** orchestra program led by **Mr. Riley Broach**. (This is part of the program's annual Spring Concert happening on Thursday, May 17 at 7:00 p.m. -- the Viper will be doing a piece with **Intermezzo Orchestra** as well.) Looking at it (in treble, alto, and bass clefs!), it goes like this:
+
+![](images/Another_Day_First_Line-1.png)
 
 
+What can we learn from this snippet? First of all, we can learn that the Viper wrote this in the `key` of G Major (or, possible, E Minor). 
 
-ADD PNG OF MUSIC
+How do we know that? Well, the key signature tells us -- one sharp means that the "legal" notes in this key are the essentially the white keys of the piano (with one exception): `G`, `A`, `B`, `C`, `D`, `E`, and `F-sharp`.
 
-Viper composed in G (how do we know). Key signature.
+![images/KeyOfG.png]
 
-But your ear and your brain can tell you -- If I sang and asked you what, you'd get right (Levitin)
+But it's interesting to note that science has shown that your ear and your brain would tell you even without seeing the key signature, just from hearing the collection of notes, where they land relative to the measures and the phrasing, and how often they occur. (I know "science has shown" sounds weaselly, but see Daniel Levitin's book, *This Is Your Brain On Music* to see that I'm actually getting this from somewhere.)
 
-Here's we'll let some simple machine learning do the work of your ears and your brain.
+In other words, if I sang this song to you -- even without playing the chords -- and then asked you to hum the "home" note, most of you would get it right and hum a `G`.
 
-I've gone through and counted how many times each note appears and recorded the results in a spreadsheet at <https://github.com/ryanjerving/note-frequencies/blob/master/datasets/another-day-frequency.csv>:
+To see what material your brain is working with, let's look at just the question of frequency -- or, rather, let's let a processing machine look at it. 
 
-```{r another-day-note-frequency}
+I wrote a little counting script in Python and fed it the notes for the lead sheet version of the melody that I'd earlier given the LZOrk musicians (you can get the treble clef it [here]<docs/Another_Day_Violin.pdf>) -- taking all repeats as written, tied notes counted only as a single note -- and then recorded the results to a csv spreadsheet at <https://github.com/ryanjerving/note-frequencies/blob/master/datasets/another-day-frequency.csv>. Then I had it rendered into the chart below using a data science environment called R. 
 
-# Read in "Another Day" note count data from csv stored in in GitHub documents for project.
-# NOTE: note counts were done with Python character count script -- include this here for reference?
+```{r another-day-note-frequency-plot}
+
+# Use R to read in "Another Day" note count data from csv stored in in GitHub documents for project.
+# We'll call this new data object "ad" (for "Another Day")
 
 ad <- read.csv("https://raw.githubusercontent.com/ryanjerving/note-frequencies/master/datasets/another-day-frequency.csv")
 
-# Plot column bar chart of each scale note of scale by frequency appearing, with bar color reflecting this as well.
+# Plot bar chart of "ad" showing each scale note by its frequency appearing, with fill color reflecting this as well.
 
 ggplot(ad, aes(x = Note, y = Frequency, fill = Frequency)) + geom_col()
 
 
 ```
 
-Analysis -- what does this tell you about your choices: which notes are landing notes, which notes are tightrope notes.
+Or, if you want to see the raw numbers, they look like this:
 
-## The Question of Style
+```{r another-day-note-frequency-table}
 
-Winnebago Bay
-
-```{r winnebago-bay, echo=FALSE}
-
+knitr::kable(ad)
 
 ```
 
-## Then There's This
+## Analysis
 
-The Monsters are Coming
+Okay, great. But what does this tell you about your choices: which notes are landing notes, which notes are tightrope notes.
+
+Some surprises here.
+
