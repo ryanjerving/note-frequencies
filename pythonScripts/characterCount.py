@@ -19,8 +19,8 @@ count = {}
 
 # Go through character by character,
 # check to see if already in dictionary as key.
-# If not, create key and initialize at one;
-# if so, add one to the key
+# If not, create key and initialize at zero;
+# After, for whatever character, add one to the keyed count for that character
 
 for character in message:
     count.setdefault(character, 0)
